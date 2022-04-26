@@ -8,9 +8,9 @@ In example:
 
 * I usually use CMake.
 * I like this particular clang-format style.
-* I like to use a VSCode tasks mixed with Makefile because CMake Tools extension for VSCode uses a [more agnostic approach](https://vector-of-bool.github.io/docs/vscode-cmake-tools/kits.html) and I don't feel confortable with the ouput. Call me lazy but I don't like  `ninja` and I don't know how to tell vscode that I don't want to use it ("CMake Tools will prefer Ninja if it is present unless configured otherwise.").
+* I like to use a VSCode tasks mixed with Makefile because CMake Tools extension for VSCode uses a [more agnostic approach](https://vector-of-bool.github.io/docs/vscode-cmake-tools/kits.html) and I don't feel comfortable with the ouput. Call me lazy but I don't like  `ninja` and I don't know how to tell vscode that I don't want to use it ("CMake Tools will prefer Ninja if it is present unless configured otherwise.").
 
-> I have F4 bound to run tasks.
+> I have `F4` bound to run tasks.
 
 ## Dependencies
 
@@ -21,7 +21,7 @@ In example:
 
 ## Notes
 
-Notice that the `run` task will not accept additional arguments. If you want to run some tests or you just need a command line program you better call the binary from command line:
+Notice that the `run` task will not accept additional arguments. If you want to run some tests or you just need a command line program you better call the binary from the command line:
 
 ```bash
 ./build/CppTemplate hello world
@@ -32,7 +32,7 @@ Notice that the `run` task will not accept additional arguments. If you want to 
 Add submodules in the `dependencies` directory:
 
 ```bash
-# example: using GoogleTest as a submodule
+# example: adding GoogleTest as a submodule
 git submodule add --name googletest https://github.com/google/googletest.git dependencies/googletest
 ```
 

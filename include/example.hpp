@@ -6,11 +6,12 @@ namespace temp
     class Example
     {
       private:
-        /* data */
+        int _test;
       public:
         Example();
         ~Example();
-        int Test();
+        int getTestValue();
+        void setTestValue(int);
     };
 
 } // namespace temp

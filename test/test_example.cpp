@@ -13,12 +13,12 @@ class ExampleTest : public ::testing::Test
 
 TEST_F(ExampleTest, test_output_nonzero)
 {
-    EXPECT_GT(this->test.Test(), 0);
+    EXPECT_GT(this->test.getTestValue(), 0);
 }
 
 TEST_F(ExampleTest, test_not_exceeded)
 {
-    EXPECT_LE(this->test.Test(), 100);
+    EXPECT_LE(this->test.getTestValue(), 100);
 }
 
 

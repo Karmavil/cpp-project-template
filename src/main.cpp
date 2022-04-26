@@ -8,9 +8,9 @@ int main(int argc, char *argv[])
     {
         temp::Example example;
         std::cout << "Main is running .." << std::endl;
-        std::string any = argc > example.Test() ? std::to_string(argc - 1) : "No ";
+        std::string any = argc > example.getTestValue() ? std::to_string(argc - 1) : "No ";
         std::cout << any << " arguments received" << std::endl;
-        if (argc > example.Test())
+        if (argc > example.getTestValue())
         {
             std::cout << "[ ";
             for (int i = 1; i < argc; i++)

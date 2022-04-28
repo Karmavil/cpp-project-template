@@ -24,7 +24,9 @@ debug: build-debug
 
 .PHONY: test
 test: build
-	./build/test_template
+	./build/test_student
+	./build/test_course
+	./build/test_grade
 
 .PHONY: run
 run: test

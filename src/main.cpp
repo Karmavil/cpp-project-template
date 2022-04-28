@@ -1,23 +1,23 @@
-#include "example.hpp"
+#include "course.hpp"
+#include "grade.hpp"
+#include "logger.hpp"
+#include "logic.hpp"
+#include "student.hpp"
 #include <iostream>
 #include <string>
 
-int main(int argc, char *argv[])
+int main()
 {
     try
     {
-        temp::Example example;
-        std::cout << "Main is running .." << std::endl;
-        std::string any = argc > example.getTestValue() ? std::to_string(argc - 1) : "No ";
-        std::cout << any << " arguments received" << std::endl;
-        if (argc > example.getTestValue())
+        temp::Logic data;
+        // temp::Logger::logStudents(data.getStudents());
+        // temp::Logger::logCourses(data.getCourses());
+        // temp::Logger::logGrades(data.getGrades());
+        std::vector<temp::Student> students = data.getStudents();
+        for (auto &&student : students)
         {
-            std::cout << "[ ";
-            for (int i = 1; i < argc; i++)
-            {
-                std::cout << argv[i] << (i < argc - 1 ? ", " : " ]");
-            }
-            std::cout << std::endl;
+            data.calculateGPA(student);
         }
     }
     catch (const std::runtime_error &re)

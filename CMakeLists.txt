@@ -23,11 +23,17 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}")
 
+include_directories(include/models)
 include_directories(include)
 
 set(
   SOURCES
-    src/example.cpp
+    src/models/grade.cpp
+    src/models/course.cpp
+    src/models/student.cpp
+    src/data/models_data.cpp
+    src/logic/logic.cpp
+    src/visual/logger.cpp
     src/main.cpp
 )
 
@@ -39,9 +45,27 @@ enable_testing()
 add_subdirectory(dependencies/googletest)
 # Add test-case executable
 add_executable(
-  test_template
-    src/example.cpp
-    test/test_example.cpp
+  test_student
+    src/models/student.cpp
+    test/test_student.cpp
 )
-add_test(TestCppTemplate test_template)
-target_link_libraries(test_template gtest_main)
+add_test(TestStudent test_student)
+target_link_libraries(test_student gtest_main)
+
+# Add test-case executable
+add_executable(
+  test_course
+    src/models/course.cpp
+    test/test_course.cpp
+)
+add_test(TestCourse test_course)
+target_link_libraries(test_course gtest_main)
+
+# Add test-case executable
+add_executable(
+  test_grade
+    src/models/grade.cpp
+    test/test_grade.cpp
+)
+add_test(TestGrade test_grade)
+target_link_libraries(test_grade gtest_main)
